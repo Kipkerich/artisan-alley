@@ -1,0 +1,174 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <section class="text-white">
+        <div class="slideshow slide-in" style="height: 100vh;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide d-flex align-items-center"
+                     style="background-image:url(../static/images/carousel-1.jpg);">
+                    <div class="banner-content w-100">
+                        <div class="container ">
+                            <div class="row ">
+                                <div class="col-md-8 offset-md-2 text-center">
+                                    <!-- <h2 class="section-title text-uppercase display-2 mt-5  text-success">Artisan Gallery</h2> -->
+                                    
+                                    <div class="btn-left btn-swiper">
+                                        <a href="{% url 'products-url'%}" class="btn btn-light text-white bg-success text-uppercase mt-3">View Products</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="swiper-slide d-flex align-items-center"
+                     style="background-image:url(../static/images/banner-large-image1.png);">
+                    <div class="banner-content w-100">
+                        <div class="container ">
+                            <div class="row ">
+                                <div class="col-md-8 offset-md-2 text-center ">
+                                    <h2 class="section-title text-uppercase display-2 mt-5">Champions Shop</h2>
+                                    <p class="caption opacity-75">Tortor eget placerat arcu integer. Lectus fames egestas tincidunt
+                                        aliquet vivamus nibh lorem nulla. This is Modern fashion ectus fames egestas tincidunt aliquet
+                                        vivamus nibh lorem nulla.</p>
+                                    <div class="btn-left btn-swiper">
+                                        <a href="#" class="btn btn-light text-white bg-transparent text-uppercase mt-3">Shop Collection</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center"
+                     style="background-image:url(../static/images/banner-large-image2.jpg);">
+                    <div class="banner-content w-100">
+                        <div class="container ">
+                            <div class="row ">
+                                <div class="col-md-8 offset-md-2 text-center ">
+                                    <h2 class="section-title text-uppercase display-2 mt-5">Champions Shop</h2>
+                                    <p class="caption opacity-75">Tortor eget placerat arcu integer. Lectus fames egestas tincidunt
+                                        aliquet vivamus nibh lorem nulla. This is Modern fashion ectus fames egestas tincidunt aliquet
+                                        vivamus nibh lorem nulla.</p>
+                                    <div class="btn-left btn-swiper">
+                                        <a href="#" class="btn btn-light text-white bg-transparent text-uppercase mt-3">Shop Collection</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-slideshow "></div> -->
+
+            <!-- <i class="icon-arrow  light-arrow icon-arrow-left"></i>
+            <i class="icon-arrow  light-arrow icon-arrow-right"></i> -->
+        </div>
+    </section>
+
+    <section class="features py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
+                    <div class="py-5">
+                        <svg width="38" height="38" viewBox="0 0 24 24" class="svg-color">
+                            <use xlink:href="#calendar"></use>
+                        </svg>
+                        <h4 class="element-title text-capitalize my-3">Add Products</h4>
+                        <p>You are able to add your products to be displayed for sale</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="300">
+                    <div class="py-5">
+                        <svg width="38" height="38" viewBox="0 0 24 24" class="svg-color">
+                            <use xlink:href="#shopping-bag"></use>
+                        </svg>
+                        <h4 class="element-title text-capitalize my-3">View Collections</h4>
+                        <p>One is able to view a variety of products displayed for sale</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="600">
+                    <div class="py-5">
+                        <svg width="38" height="38" viewBox="0 0 24 24" class="svg-color">
+                            <use xlink:href="#gift"></use>
+                        </svg>
+                        <h4 class="element-title text-capitalize my-3">Contacts</h4>
+                        <p>One is able to obtain the contact details and location of the seller</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="900">
+                    <div class="py-5">
+                        <svg width="38" height="38" viewBox="0 0 24 24" class="svg-color">
+                            <use xlink:href="#arrow-cycle"></use>
+                        </svg>
+                        <h4 class="element-title text-capitalize my-3">Payment Gateway</h4>
+                        <p>The buyer is able to make payment for the product through this platform </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+   
+
+    <section class="categories full-width-container overflow-hidden">
+        <div class="row d-flex flex-wrap g-0">
+            <div class="col-md-6 col-sm-6">
+                <div class="cat-item position-relative">
+                    <div class="image-holder">
+                        <a href="{% url 'products-url'%}"><img src="../static/images/carousel-2.jpg" alt="categories"
+                                                 class="product-image img-fluid"></a>
+                        <div class="category-content position-absolute p-md-5 ps-5 p-3 text-uppercase  ">
+                            <h2 class="section-title text-white display-3">Pottery</h2>
+                            <div class="btn-left btn-swiper">
+                                <a href="{% url 'products-url'%}" class="btn btn-success text-white bg-transparent text-uppercase">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="">
+                    <div class="cat-item position-relative">
+                        <div class="image-holder">
+                            <a href="{% url 'products-url'%}"><img src="../static/images/carousel-3.jpg" alt="categories"
+                                                     class="product-image img-fluid"></a>
+                            <div class="category-content position-absolute p-md-5 ps-5 p-3 text-uppercase">
+                                <h4 class="section-title text-white display-6">Art Work</h4>
+                                <div class="btn-left btn-swiper mt-3">
+                                    <a href="{% url 'products-url'%}" class="btn btn-success text-white bg-transparent text-uppercase">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+
+  
+
+   
+
+    <section class="logo-bar mt-5 py-5">
+        <div class="container">
+            <div class="row mt-5 ">
+                <div class="logo-content d-flex flex-wrap justify-content-between">
+                    <img src="../static/images/logo1.png" alt="logo" class="logo-image img-fluid my-3">
+                    <img src="../static/images/logo2.png" alt="logo" class="logo-image img-fluid my-3">
+                    <img src="../static/images/logo3.png" alt="logo" class="logo-image img-fluid my-3">
+                    <img src="../static/images/logo4.png" alt="logo" class="logo-image img-fluid my-3">
+                    <img src="../static/images/logo5.png" alt="logo" class="logo-image img-fluid my-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+  
+
+   
+{% endblock %}
