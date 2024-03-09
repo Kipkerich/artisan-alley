@@ -38,9 +38,14 @@
                                         <a href="#">{{ product.name }}</a>
                                     </h5>
                                     <a href="#" class="text-decoration-none" data-after="Add to cart"><span>Ksh. {{ product.price }}</span></a>
+                                    <a href="#">{{ product.desc }}</a>
                                     <br>
+                                    {% if user.is_authenticated %}
                                     <a class="btn btn-outline-danger" href="/products/delete/{{ product.id }}">Delete</a>
                                     <a class="btn btn-outline-info" href="/products/update/{{ product.id }}">Update</a>
+                                    {% else %}
+                                    <a class="btn btn-outline-danger" href="#">Ensure you contact the owner before making purchase</a>
+                                    {% endif %}
                                     <a class="btn btn-outline-success" href="/products/pay/{{ product.id }}">Pay</a>
                                 </div>
                             </div>

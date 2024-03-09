@@ -1,6 +1,23 @@
 {% extends 'master.html' %}
 {% block content %}
-	<p class="text-center mt-4">
-        You've logged out!!! <a href="{% url 'login-url' %}">Login again</a>
-    </p>
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript to submit a POST request for logout -->
+<script>
+    $(document).ready(function() {
+        $('#logout-link').click(function(event) {
+            event.preventDefault(); // Prevent the default action of the link
+            $.post('{% url "logout-url" %}', function() {
+                window.location.href = '{% url "home-url" %}'; // Redirect after logout
+            });
+        });
+    });
+</script>
+
+<!-- Logout link -->
+<p>You have successfully logged out!!</p> <br><br>
+
+
+
 {% endblock %}
