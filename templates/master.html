@@ -187,7 +187,7 @@
 
             <div class="col-auto">
                 <a class="navbar-brand" href="{% url 'home-url' %}">
-                    <img src="{% static 'images/artisan-logo.png' %}" alt="logo">
+                    ARTISAN<img src="{% static 'images/logo.png' %}" class="logo" alt="logo">ALLEY
                 </a>
             </div>
 
@@ -208,7 +208,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end  flex-grow-1 gap-5 pe-3">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" href="{% url 'home-url'%}" id="dropdownHome" data-bs-toggle="dropdown"
+                                <a class="nav-link dropdown-toggle" href="{% url 'home-url'%}" id="dropdownHome" data-bs-toggle="dropdown"
                                    aria-haspopup="true" aria-expanded="false">Home</a>
                                 <ul class="dropdown-menu list-unstyled" aria-labelledby="dropdownHome">
                                     <li>
@@ -228,22 +228,27 @@
                                     <li>
                                         <a href="{% url 'products-url' %}" class="dropdown-item item-anchor">View products 
                                                 </a>
+                                                <a href="{% url 'add-products-url' %}" class="dropdown-item item-anchor">Add products 
+                                                </a>
                                     </li>
                                     
 
                                 </ul>
                             </li>
                             
-                        
+                            {% if not user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'registration-url' %}">Register</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'login-url' %}">Login</a>
                             </li>
+                            {%endif%}
+                            {% if user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout-url' %}">Logout</a>
                             </li>
+                            {%endif%}
                             
                         </ul>
                     </div>
@@ -254,9 +259,9 @@
                 <ul class="list-unstyled d-flex m-0 mt-3 mt-xl-0">
                   
                     <li>
-                        <a href="#" class="text-uppercase mx-3">
+                        <a href="#" class=" home-cart text-uppercase mx-3">
                             <svg width="24" height="24" viewBox="0 0 24 24">
-                                <use xlink:href="#cart"></use>
+                                <use xlink:href="#cart" style="color: white;"></use>
                             </svg>
                             <span class="cart-count">(0)</span>
                         </a>
@@ -300,11 +305,15 @@
                 <div class="footer-menu footer-menu-001">
                     <div class="footer-intro mb-4">
                         <a href="{% url 'home-url'%}">
-                            <img src="../static/images/artisan-logo.png" alt="logo">
+                            ARTISAN<img src="../static/images/logo.png" class="logo" alt="logo">ALLEY
                         </a>
                     </div>
-                    <p>Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in. Nisi, purus
-                        vitae, ultrices nunc. Sit ac sit suscipit hendrerit.</p>
+                    <p>Artisan Alley is a vibrant online marketplace dedicated to celebrating
+                        the art of craftsmanship. Our mission is to bridge the gap between
+                        talented artisans and discerning customers who value quality, 
+                        uniqueness, and the story behind each creation. We believe in 
+                        the beauty of handmade products and the importance of 
+                        preserving traditional skills and techniques.</p>
                     <div class="social-links">
                         <ul class="list-unstyled d-flex flex-wrap gap-4">
                             <li>

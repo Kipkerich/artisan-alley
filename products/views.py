@@ -20,6 +20,8 @@ def add_products(request):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
+            product=form.save(commit=False)
+            product.owner=request.user
             form.save()
             messages.success(request, 'Product saved successfully')
             return redirect("add-products-url")
@@ -33,6 +35,8 @@ def add_products(request):
 
 def update_products(request, id):
     product = Product.objects.get(id=id)
+    if request.user !=product.owner:
+        return redirect('products-url')
     if request.method == "POST":
         product_name = request.POST.get('name')
         product_qtty = request.POST.get('qtty')
@@ -52,6 +56,8 @@ def update_products(request, id):
 
 def delete(request, id):
     product = Product.objects.get(id=id)
+    if request.user !=product.owner:
+        return redirect('products-url')
     product.delete()
     messages.success(request, 'Product deleted successfully')
     return redirect('products-url')

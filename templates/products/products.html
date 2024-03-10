@@ -17,40 +17,41 @@
 
                     {% for product in products %}
                     	<div class="swiper-slide">
-                        <div class="product-item ">
-                            <div class="image-holder position-relative">
-                                <a href="#">
-                                    <img src="{% static '../' %}{{ product.image }}" alt="categories" class="product-image img-fluid">
-                                </a>
-                                <a href="#" class="btn-icon btn-wishlist ">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" class="svg-color">
-                                        <use xlink:href="#heart"></use>
-                                    </svg>
-                                </a>
-                                <a href="#" class="btn-icon btn-cart ">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" class="svg-color">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </a>
-
+                            <div class="product-item card h-100">
+                                <div class="image-holder position-relative">
+                                    <a href="#" class="image-link">
+                                        <img src="{% static '../' %}{{ product.image }}" alt="Product Image" class="product-image img-fluid">
+                                    </a>
+                                    <div class="icons">
+                                        <a href="#" class="btn-icon btn-wishlist">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" class="svg-icon svg-color-heart">
+                                                <use xlink:href="#heart"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="btn-icon btn-cart">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" class="svg-icon svg-color-cart">
+                                                <use xlink:href="#cart"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
                                 <div class="product-content">
-                                    <h5 class="element-title text-uppercase fs-6 mt-3">
+                                    <h5 class="product-title">
                                         <a href="#">{{ product.name }}</a>
                                     </h5>
-                                    <a href="#" class="text-decoration-none" data-after="Add to cart"><span>Ksh. {{ product.price }}</span></a>
-                                    <a href="#">{{ product.desc }}</a>
-                                    <br>
-                                    {% if user.is_authenticated %}
+                                    <p class="product-price">Ksh. {{ product.price }}</p>
+                                    <p class="product-desc">{{ product.desc }}</p>
+                                    {% if user.is_authenticated and product.owner == request.user %}
                                     <a class="btn btn-outline-danger" href="/products/delete/{{ product.id }}">Delete</a>
                                     <a class="btn btn-outline-info" href="/products/update/{{ product.id }}">Update</a>
                                     {% else %}
-                                    <a class="btn btn-outline-danger" href="#">Ensure you contact the owner before making purchase</a>
+                                    <a class="btn btn-outline-warning" href="#">Contact Owner Before Purchase</a>
                                     {% endif %}
-                                    <a class="btn btn-outline-success" href="/products/pay/{{ product.id }}">Pay</a>
+                                    <a class="btn pay" href="/products/pay/{{ product.id }}">Pay</a>
                                 </div>
                             </div>
+                            
                         </div>
-                    </div>
                     {% endfor %}
 
                 </div>
@@ -58,7 +59,6 @@
             <div class="icon-arrow no-outline icon-arrow-left bg-light"></div>
             <div class="icon-arrow no-outline icon-arrow-right bg-light"></div>
             <div class="text-center mt-5">
-                <a href="shop-sidebar.html" class="btn-link">View All Products</a>
             </div>
 
         </div>
