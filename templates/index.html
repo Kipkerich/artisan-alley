@@ -5,7 +5,7 @@
         <div class="slideshow slide-in" style="height: 100vh;">
             <div class="swiper-wrapper">
                 <div class="swiper-slide d-flex align-items-center"
-                     style="background-image:url(../static/images/carousel-1.jpg);">
+                     style="background-image:url(../static/images/mainback.jpg);">
                     <div class="banner-content w-100">
                         <div class="container ">
                             <div class="row ">
@@ -13,7 +13,9 @@
                                     <!-- <h2 class="section-title text-uppercase display-2 mt-5  text-success">Artisan Gallery</h2> -->
                                     
                                     <div class="btn-left btn-swiper">
-                                        <a href="{% url 'products-url'%}" class="btn btn-light text-white bg-success text-uppercase mt-3">View Products</a>
+                                        <a href="{% url 'products-url'%}" class="btn products text-uppercase mt-3">View Products</a><br>
+                                        <a href="{% url 'add-products-url'%}" class="btn add-products text-uppercase mt-3">Add Products</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +69,7 @@
     <section class="features py-5">
         <div class="container">
             <div class="row">
-                <div clasgs="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
+                <div class="col-md-3 text-center" data-aos="fade-in" data-aos-delay="0">
                     <div class="py-5">
                         <svg width="38" height="38" viewBox="0 0 24 24" class="svg-color">
                             <use xlink:href="#calendar"></use>
